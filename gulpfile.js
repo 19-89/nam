@@ -33,9 +33,7 @@ gulp.task('jscs', function () {
 
 gulp.task('jshint', function () {
     gulp.src(jsSorces)
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'));
+        .pipe(jshint());
 });
 
 gulp.task('build',
