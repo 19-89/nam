@@ -1,0 +1,11 @@
+{
+  "node": true,
+  "browser": true,
+  "undef": true,
+  "unused": true,
+  "curly": true,
+  "immed": true,
+  "newcap": true,
+  "nonew": true,
+  "noempty": false
+}
