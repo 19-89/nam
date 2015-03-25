@@ -1,0 +1,24 @@
+{
+  "name": "nam",
+  "version": "0.0.1",
+  "description": "angular posts example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/19-89/nam.git"
+  },
+  "keywords": [
+    "node",
+    "angular",
+    "mongoose"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/19-89/nam/issues"
+  },
+  "homepage": "https://github.com/19-89/nam"
+}
