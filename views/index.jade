@@ -2,6 +2,6 @@ extends layout
 block head
 block body
     div(ng-controller="MainController")
-        div {{ message }}
+        bgf-pagination(collection="someVariable", url="'http://localhost:4444/data/post'")
 
     include appscripts
