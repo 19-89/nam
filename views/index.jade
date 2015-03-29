@@ -4,7 +4,8 @@ block head
 block body
     div(ng-controller="MainController")
         ul
-            li(ng-repeat="p in posts") {{ p.test }}
+            li(ng-repeat="p in posts") {{ p.title }}
+        br
         a(href="#/home") /home
         br
         a(href="#/search?page=1") /search?page=1
