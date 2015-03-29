@@ -9,7 +9,7 @@ angular.module('nam')
         '$location',
         function ($scope, apiService, $location) {
             apiService.apiPath = "http://localhost:4444/data/";
-
+            $scope.rowsPerPage = 3;
             var getPosts = function () {
                 apiService.getPosts({}, function (err, posts) {
                     if (err) {

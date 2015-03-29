@@ -4,7 +4,7 @@ block head
 block body
     div(ng-controller="MainController")
         ul
-            li(ng-repeat="p in posts") {{ p.title }}
+            li(ng-repeat="p in posts | paginate:rowsPerPage") {{ p.title }}
         br
         a(href="#/home") /home
         br
@@ -15,3 +15,5 @@ block body
         div scope.page {{ page }}
         br
         ng-view
+
+        paginator
