@@ -10,4 +10,4 @@ server(app);
 
 var port = process.env.PORT || 4444;
 httpServer.listen(port);
-debug('Server listening on port', port);
+console.log('Server listening on port', port);

@@ -1,7 +1,16 @@
 extends layout
 block head
+    include appscripts
 block body
     div(ng-controller="MainController")
-        bgf-pagination(collection="someVariable", url="'http://localhost:4444/data/post'")
-
-    include appscripts
+        ul
+            li(ng-repeat="p in posts") {{ p.test }}
+        a(href="#/home") /home
+        br
+        a(href="#/search?page=1") /search?page=1
+        br
+        a(href="#/search?page=2") /search?page=2
+        br
+        div scope.page {{ page }}
+        br
+        ng-view

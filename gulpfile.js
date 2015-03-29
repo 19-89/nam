@@ -14,7 +14,10 @@ if (process.env.REAL_ENV) {
 
 gulp.task('scripts', function () {
     gulp.src('src/js/app.js')
-        .pipe(webpack())
+        .pipe(webpack({
+            debug: true,
+            devtool: '#inline-source-map'
+        }))
         .pipe(rename('bundle.js'))
         .pipe(gulp.dest('build/js'))
         .pipe(size({ showFiles: true }));

@@ -1,6 +1,21 @@
 require('angular/angular');
-require('./lib/paginate-anything-tpls.min');
+require('angular-route/angular-route');
 
-angular.module('nam', ['bgf.paginateAnything']);
+angular.module('nam', ['ngRoute'])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/search', {
+                controller: 'MainController',
+                template: '{{ "page: " + page }}',
+                reloadOnSearch: false
+            })
+            .when('/home', {
+                template: 'home page'
+            })
+            .otherwise({
+                redirectTo: '/home'
+            });
+    });
+
 require('./api-service');
 require('./main');
