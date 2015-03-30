@@ -5,7 +5,7 @@ angular.module('nam')
         this.getPosts = function (params, callback) {
             $http({
                 method: 'GET',
-                url: this.apiPath + '/post',
+                url: this.apiPath + 'post',
                 params: params
             })
                 .success(function (data) {

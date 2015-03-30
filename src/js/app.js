@@ -32,8 +32,9 @@ angular.module('caco.ClientPaginate', ['ngRoute'])
         }
     })
 
-    .service('Paginator', function ($rootScope) {
+    .service('Paginator', function ($rootScope, $location) {
         this.page = 0;
+        this.fpage = 0;
         this.rowsPerPage = 50;
         this.itemCount = 0;
         this.limitPerPage = 5;
@@ -43,7 +44,7 @@ angular.module('caco.ClientPaginate', ['ngRoute'])
                 return;
             }
 
-            this.page = page;
+            $location.path('/search').search({page: page + 1});
         };
 
         this.nextPage = function () {
@@ -51,7 +52,7 @@ angular.module('caco.ClientPaginate', ['ngRoute'])
                 return;
             }
 
-            this.page++;
+            $location.path('/search').search({page: this.page + 2});
         };
 
         this.perviousPage = function () {
@@ -59,15 +60,24 @@ angular.module('caco.ClientPaginate', ['ngRoute'])
                 return;
             }
 
-            this.page--;
+            $location.path('/search').search({page: this.page });
         };
 
         this.firstPage = function () {
-            this.page = 0;
+
+            $location.path('/search').search({page: 1});
         };
 
         this.lastPage = function () {
-            this.page = this.pageCount() - 1;
+            $location.path('/search').search({page: this.pageCount()});
+        };
+
+        this.fsetPage = function (page) {
+            if (page > this.pageCount()) {
+                return;
+            }
+
+            this.page = page;
         };
 
         this.isFirstPage = function () {

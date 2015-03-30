@@ -7,7 +7,8 @@ angular.module('nam')
         '$scope',
         'apiService',
         '$location',
-        function ($scope, apiService, $location) {
+        'Paginator',
+        function ($scope, apiService, $location, Paginator) {
             apiService.apiPath = "http://localhost:4444/data/";
             $scope.rowsPerPage = 3;
             var getPosts = function () {
@@ -16,6 +17,7 @@ angular.module('nam')
                         console.error(err);
                     } else {
                         $scope.posts = posts;
+                        Paginator.fsetPage($location.search().page - 1);
                     }
                 });
             };
@@ -26,6 +28,7 @@ angular.module('nam')
                 return $location.search().page
             }, function (newVal, oldVal) {
                 $scope.page = newVal;
+                Paginator.fsetPage($scope.page  - 1);
             });
         }
     ]
