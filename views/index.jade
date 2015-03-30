@@ -6,16 +6,4 @@ block body
         ul
             li(ng-repeat="p in posts | paginate:rowsPerPage") {{ p.title }}
         br
-        a(href="#/home") /home
-        br
-        a(href="#/search?page=1") /search?page=1
-        br
-        a(href="#/search?page=2") /search?page=2
-        br
-        div scope.page {{ page }}
-        br
-        ng-view
-
         paginator
-
-        button(ng-click="sett()") rere

@@ -128,11 +128,8 @@ angular.module('nam', ['ngRoute', 'caco.ClientPaginate'])
                 template: '{{ "page: " + page }}',
                 reloadOnSearch: false
             })
-            .when('/home', {
-                template: 'home page'
-            })
             .otherwise({
-                redirectTo: '/home'
+                redirectTo: '/search?page=0'
             });
     });
 
